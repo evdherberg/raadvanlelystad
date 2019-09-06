@@ -1,0 +1,24 @@
+- naam: "VVD"
+  lootjes: 10
+  inschrijvingen:
+    - 2
+    - 5
+    - 7
+    - 10
+    - 13
+  jokers:
+    - 2
+    - 7
+    - 10
+- naam: "Leefbaar Lelystad"
+  lootjes: 8
+  inschrijvingen:
+    - 2
+    - 5
+    - 7
+    - 10
+    - 13
+  jokers:
+    - 2
+    - 7
+    - 10
