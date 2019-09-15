@@ -2,20 +2,21 @@ package nl.emielvanderherberg.raadvanlelystad.motiemarkt.veiling.domain;
 
 import lombok.Data;
 
-/**
- *
- */
 @Data
-public class LotingDeelname {
-    // Loting gegevens
+public class LotingDeelname implements Comparable<LotingDeelname> {
+    // Dynamische gegevens
     private Fractie fractie;
     private LotingRonde lotingRonde;
     private int aantalJokerLoten = 0;
-
-    // Uitslag gegevens
     private int aantalFractieLoten = 0;
 
-    public int getAantalLoten() {
-        return aantalFractieLoten + aantalJokerLoten;
+    public Integer getAantalLoten() {
+        // Geen deelname met jokerloten als de reguliere loten al op zijn
+        return aantalFractieLoten + (aantalFractieLoten > 0 ? aantalJokerLoten : 0);
+    }
+
+    @Override
+    public int compareTo(LotingDeelname o) {
+        return -1 * getAantalLoten().compareTo(o.getAantalLoten());
     }
 }
