@@ -1,4 +1,4 @@
-package nl.emielvanderherberg.raadvanlelystad.motiemarkt.veiling.domain;
+package nl.emielvanderherberg.rvl.motiemarkt.veiling.domain;
 
 import lombok.Data;
 
@@ -6,9 +6,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-/**
- *
- */
 @Data
 public class Scorelijst {
     private String fractie;

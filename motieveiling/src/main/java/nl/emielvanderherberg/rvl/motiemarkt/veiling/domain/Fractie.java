@@ -1,4 +1,4 @@
-package nl.emielvanderherberg.raadvanlelystad.motiemarkt.veiling.domain;
+package nl.emielvanderherberg.rvl.motiemarkt.veiling.domain;
 
 import lombok.Data;
 

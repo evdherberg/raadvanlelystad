@@ -1,4 +1,4 @@
-package nl.emielvanderherberg.raadvanlelystad.motiemarkt.veiling.domain;
+package nl.emielvanderherberg.rvl.motiemarkt.veiling.domain;
 
 import lombok.Data;
 
@@ -136,8 +136,5 @@ public class LotingRonde {
             System.out.print(message);
         }
         new Scanner(System.in).nextLine();
-
-
-
     }
 }
