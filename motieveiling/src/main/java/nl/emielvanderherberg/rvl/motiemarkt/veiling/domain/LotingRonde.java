@@ -16,7 +16,7 @@ public class LotingRonde {
     // Initiële gegevens
     private int rondeNr;
     private Motie motie;
-    private boolean waitForKey = false;
+    private boolean waitForEnterKey = false;
 
     // Dynamische gegevens
     private List<LotingDeelname> deelnames;
@@ -35,8 +35,8 @@ public class LotingRonde {
         printStartInfo(out);
         if (getTotaalLoten() == 0) {
             if (!deelnames.isEmpty()) {
-                out.println("Geen van de geïnteresseerde fracties heeft nog lootjes");
-                out.println("Maar omdat er geen andere fracties deelnemen, komen " + fractiesInDeelnames(deelnames) + " alsnog in aanmerking");
+                out.println("Geen van de geïnteresseerde fracties heeft nog loten");
+                out.println("Maar omdat er geen andere fracties deelnemen, " + (deelnames.size() == 1 ? "komt " : "komen ") + fractiesInDeelnames(deelnames) + " alsnog in aanmerking");
 
                 // Geef nu voorrang aan fracties die op deze motie een joker hebben ingezet
                 List<LotingDeelname> deelnamesMetJokers = deelnames.stream().filter(deelname -> deelname.getAantalJokerLoten() > 0).collect(Collectors.toList());
@@ -49,12 +49,21 @@ public class LotingRonde {
                 out.println("Uitslag random trekking ---> " + winnaar.getNaam());
                 verwerkResultaat(out);
             } else {
-                out.println("Helaas heeft geen enkele fractie interesse getoond voor deze motie");
+                out.println("Helaas heeft geen enkele fractie zich aangemeld voor deze motie");
             }
         } else {
             vulPot(out);
+            if (waitForEnterKey) {
+                out.print("De trekking vindt nu plaats");
+                waitForEnter("... (druk ENTER om het lot te trekken)");
+            } else {
+                out.println("De trekking vindt nu plaats...");
+            }
             trekLootje(out);
             verwerkResultaat(out);
+            if (waitForEnterKey) {
+                waitForEnter(null);
+            }
         }
         out.println();
         out.println();
@@ -62,16 +71,17 @@ public class LotingRonde {
     }
 
     /**
-     * "Om ervoor te zorgen dat iedere fractie een idee krijgt toegewezen, kent de eerste fase van de loting een extra
+     * Om ervoor te zorgen dat iedere fractie een idee krijgt toegewezen, kent de eerste fase van de loting een extra
      * regel. Namelijk: een fractie die een loting wint wordt tijdelijk uitgesloten van de daaropvolgende lotingen. Deze
      * fase eindigt zodra alle fracties één idee toegewezen hebben gekregen. Op deze wijze krijgen alle fracties één
-     * idee, voordat er tweede en volgende ideeën worden toegekend."
+     * idee, voordat er tweede en volgende ideeën worden toegekend. Echter fracties die in deze ronde een joker inzetten
+     * worden nooit buiten mededinging gezet.
      */
     private void bepaalBuitenMededinging() {
         boolean deelnemersNogZonderOverwinningen = deelnames.stream().map(LotingDeelname::getFractie).anyMatch(fractie -> fractie.getGewonnenMoties().isEmpty());
         if (deelnemersNogZonderOverwinningen) {
             deelnames.stream().filter(deelname -> !deelname.getFractie().getGewonnenMoties().isEmpty()).forEach(deelname -> tijdelijkBuitenMededinging.add(deelname));
-            deelnames.removeIf(deelname -> !deelname.getFractie().getGewonnenMoties().isEmpty());
+            deelnames.removeIf(tijdelijkBuitenMededinging::contains);
         }
     }
 
@@ -80,7 +90,7 @@ public class LotingRonde {
         out.println("=========================================== Loting ronde " + rondeNummerString + " ==========================================");
         out.println("Deze ronde betreft " + motie.toString());
         if (!tijdelijkBuitenMededinging.isEmpty()) {
-            out.println(fractiesInDeelnames(tijdelijkBuitenMededinging) + (tijdelijkBuitenMededinging.size() == 1 ? " neemt" : " nemen") + " niet aan deze loting deel omdat andere deelnemende fracties nog geen enkele motie hebben gekregen");
+            out.println(fractiesInDeelnames(tijdelijkBuitenMededinging) + (tijdelijkBuitenMededinging.size() == 1 ? " neemt" : " nemen") + " niet aan deze ronde deel omdat andere deelnemende fracties nog geen enkele motie hebben gekregen");
         }
         out.println("Deelnemers:");
         deelnames.forEach(deelname -> {
@@ -98,33 +108,24 @@ public class LotingRonde {
             }
         });
         out.println("------------------------------------------------------------------------------------------------------");
-        out.println("De volgende lootjes zitten in de pot:");
+        out.println("De volgende loten zitten in de pot:");
         IntStream.range(0, lootjes.size()).forEach(i -> {
             out.print(String.format(" [%02d] ", i + 1) + lootjes.get(i).getNaam());
         });
         out.println();
+        out.println("------------------------------------------------------------------------------------------------------");
     }
 
     private void trekLootje(PrintStream out) {
-        out.println("------------------------------------------------------------------------------------------------------");
-        if (waitForKey) {
-            out.print("De trekking vindt nu plaats");
-            waitForEnter("... (druk ENTER om het lootje te trekken)");
-        } else {
-            out.println("De trekking vindt nu plaats");
-        }
         int getrokkenLootjeIndex = ThreadLocalRandom.current().nextInt(0, lootjes.size());
         this.getrokkenLootjeNr = getrokkenLootjeIndex + 1;
         winnaar = lootjes.get(getrokkenLootjeIndex);
-        out.println("Het getrokken lootje is nummer " + getrokkenLootjeNr + " ---> " + winnaar.getNaam());
+        out.println("Het getrokken lot is nummer " + getrokkenLootjeNr + " ---> " + winnaar.getNaam());
     }
 
     private void verwerkResultaat(PrintStream out) {
         winnaar.winMotie(motie);
         out.println("(" + winnaar.getNaam() + " heeft nu nog " + winnaar.getResterendeLoten() + (winnaar.getResterendeLoten() == 1 ? " lot" : " loten") + " over)");
-        if (waitForKey) {
-            waitForEnter(null);
-        }
     }
 
     private int getTotaalLoten() {

@@ -34,7 +34,7 @@ public class Loting {
         Yaml yaml = new Yaml();
         InputStream inputStream = this.getClass()
                 .getClassLoader()
-                .getResourceAsStream("scorelijsten.yaml");
+                .getResourceAsStream("scorelijsten-test.yaml");
         List<Map<String, Object>> scorelijstRecords = yaml.load(inputStream);
 
         List<Scorelijst> scorelijsten = scorelijstRecords.stream().map(propertyMap -> new Scorelijst(propertyMap, this.alleMoties)).collect(Collectors.toList());
@@ -80,14 +80,14 @@ public class Loting {
         System.out.println();
     }
 
-    private void voerLotingUit(boolean waitForKey) {
+    private void voerLotingUit(boolean waitForEnterKey) {
         Integer huidigeRonde = 1;
 
         for (Motie huidigeMotie : motiesInVolgordeVanPopulariteit) {
             LotingRonde lotingRonde = new LotingRonde();
             lotingRonde.setRondeNr(huidigeRonde);
             lotingRonde.setMotie(huidigeMotie);
-            lotingRonde.setWaitForKey(waitForKey);
+            lotingRonde.setWaitForEnterKey(waitForEnterKey);
 
             List<LotingDeelname> alleDeelnamesAanDezeRonde = new ArrayList<>();
             for (Fractie fractie : alleFracties.values()) {
@@ -138,9 +138,15 @@ public class Loting {
             for (Motie motie : overblijvers) {
                 System.out.println("- " + motie.toString());
             }
-            System.out.println("Deze moties worden door de voorzitter van het presidium verder afgehandeld");
+            System.out.println("Deze moties worden verder afgehandeld door de voorzitter van het presidium");
         }
 
+        System.out.println();
+        System.out.println("======================================================================================================");
+        System.out.println("=========================================== LET OP LET OP ============================================");
+        System.out.println("======================================================================================================");
+        System.out.println("Dit is een eerste verdeling. Ruilen mag nog gerust! Maar zorg er wel voor dat je motie wordt opgepakt.");
+        System.out.println("======================================================================================================");
     }
 
     public static void main(String[] args) {

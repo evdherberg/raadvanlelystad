@@ -2,6 +2,7 @@ package nl.emielvanderherberg.rvl.motiemarkt.veiling.domain;
 
 import lombok.Data;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -21,6 +22,10 @@ public class Scorelijst {
         this.lootjes = Integer.class.cast(properties.get("lootjes"));
         this.inschrijvingen = List.class.cast(properties.get("inschrijvingen"));
         this.jokers = List.class.cast(properties.get("jokers"));
+
+        if (this.jokers == null) {
+            this.jokers = new ArrayList<>();
+        }
 
         initialiseerIngeschrevenMoties(alleMoties);
     }

@@ -25,18 +25,18 @@
 - nummer: 10
   titel: "Elke inwoner een boom planten"
   indiener: "Jaap Knip"
-- nummer: 11
-  titel: "Eigen kinderruimte Kustwijk"
-  indiener: "Milka van Putten"
+#- nummer: 11
+#  titel: "Eigen kinderruimte Kustwijk"
+#  indiener: "Milka van Putten"
 - nummer: 12
   titel: "Seniorenpagina Flevopost"
   indiener: "OSOL - J.S.M. Sträter-van Grinsven"
 - nummer: 13
   titel: "Restauratie schip De Batavia"
   indiener: "Dieuwko Postema"
-- nummer: 14
-  titel: "Duurzaamheidsregelingen volledig om duurzaamheid"
-  indiener: "Mark Scholten"
+#- nummer: 14
+#  titel: "Duurzaamheidsregelingen volledig om duurzaamheid"
+#  indiener: "Mark Scholten"
 - nummer: 15
   titel: "Verfraaien van het stadshart door middel van graffitikunst"
   indiener: "Isis van den Berg"
@@ -76,9 +76,9 @@
 - nummer: 27
   titel: "Ondernemerschap voor jongeren"
   indiener: "Finn van den IJssel"
-- nummer: 28
-  titel: "Calisthenics park"
-  indiener: "Damy Mullenders"
+#- nummer: 28
+#  titel: "Calisthenics park"
+#  indiener: "Damy Mullenders"
 - nummer: 29
   titel: "Mini tennisbaan LTVL"
   indiener: "Pieter Hermus"
@@ -91,15 +91,15 @@
 - nummer: 32
   titel: "Entree en parkeerplek verbeteren De Ponyclub"
   indiener: "Miriam Duijn"
-- nummer: 33
-  titel: "Verkeersspiegels kruispunten fietspaden"
-  indiener: "Carola Gerrits"
+#- nummer: 33
+#  titel: "Verkeersspiegels kruispunten fietspaden"
+#  indiener: "Carola Gerrits"
 - nummer: 34
   titel: "Groenmarkt: Voor de vergroening van Tuinen in Lelystad (Steenbreek)"
   indiener: "Willem Boers"
-- nummer: 35
-  titel: "Burgers en gemeente informeren over de gevaren van het 5G netwerk!"
-  indiener: "Katrien Van den Berghe"
+#- nummer: 35
+#  titel: "Burgers en gemeente informeren over de gevaren van het 5G netwerk!"
+#  indiener: "Katrien Van den Berghe"
 - nummer: 36
   titel: "Techniekwedstrijd Jeugd"
   indiener: "Dick Rensema"
@@ -112,9 +112,9 @@
 - nummer: 39
   titel: "Milieu verantwoorde afvoer van afvalwater van kinderboerderij Stadspark"
   indiener: "W.J. Bruins"
-- nummer: 40
-  titel: "Lelystedelingen activeren om van lelystad  \"echte\" stad te maken"
-  indiener: "Yasmine Aouada"
+#- nummer: 40
+#  titel: "Lelystedelingen activeren om van lelystad  \"echte\" stad te maken"
+#  indiener: "Yasmine Aouada"
 - nummer: 41
   titel: "Uitbreiding bijenstrook en aanleg voedselbos Waterwijk"
   indiener: "Dennis Parengkuan"
@@ -130,9 +130,9 @@
 - nummer: 45
   titel: "Station Lelystad Zuid in gebruik nemen en uitbreiden"
   indiener: "Kars Karelsen"
-- nummer: 46
-  titel: "Omheining rondom het speelveld en pad achter de woningen"
-  indiener: "Sofie van den Braak"
+#- nummer: 46
+#  titel: "Omheining rondom het speelveld en pad achter de woningen"
+#  indiener: "Sofie van den Braak"
 - nummer: 47
   titel: "Samen brengen we de Batavia aan Land!"
   indiener: "Stichting Erfgoedpark Batavialand"

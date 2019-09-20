@@ -1,267 +1,172 @@
-- naam: "VVD"
+- naam: "AAA"
   lootjes: 10
   inschrijvingen:
     - 2
     - 3
     - 4
     - 5
-    - 6
     - 7
-    - 8
-    - 9
-    - 10
-    - 11
-    - 12
+    - 42
+    - 38
+    - 22
+    - 33
+    - 37
     - 13
-    - 21
-    - 44
+    - 6
   jokers:
-    - 9
-    - 10
-    - 11
-- naam: "Leefbaar Lelystad"
+    - 3
+    - 4
+    - 5
+- naam: "BBB"
   lootjes: 8
   inschrijvingen:
-    - 5
-    - 6
-    - 7
-    - 8
-    - 9
-    - 10
-    - 11
     - 12
     - 13
-    - 14
     - 15
     - 16
-    - 33
     - 34
+    - 14
   jokers:
     - 12
     - 13
-    - 14
-- naam: "Inwonerspartij"
+    - 16
+- naam: "CCC"
   lootjes: 6
   inschrijvingen:
-    - 8
-    - 9
-    - 10
-    - 11
-    - 12
-    - 13
-    - 14
     - 15
     - 16
     - 17
     - 18
     - 19
-    - 44
-    - 45
-  jokers:
-    - 15
-    - 16
-    - 17
-- naam: "PvdA"
-  lootjes: 6
-  inschrijvingen:
-    - 11
-    - 12
-    - 13
-    - 14
-    - 15
-    - 16
-    - 17
-    - 18
-    - 19
-    - 20
-    - 21
-    - 22
-    - 23
     - 41
   jokers:
-    - 18
-    - 19
-    - 20
-- naam: "Christenunie"
-  lootjes: 6
-  inschrijvingen:
-    - 14
     - 15
     - 16
     - 17
-    - 18
-    - 19
-    - 20
-    - 21
-    - 22
-    - 23
-    - 24
-    - 25
-    - 3
-    - 35
-  jokers:
-    - 21
-    - 22
-    - 23
-- naam: "PVV"
-  lootjes: 4
+- naam: "DDD"
+  lootjes: 6
   inschrijvingen:
-    - 17
-    - 18
-    - 19
-    - 22
-    - 23
-    - 24
-    - 25
-    - 26
-    - 27
-    - 28
+    - 15
+    - 36
+    - 42
+    - 47
     - 44
     - 2
   jokers:
-    - 24
-    - 25
-    - 26
-- naam: "Groenlinks"
-  lootjes: 4
+    - 42
+    - 15
+    - 47
+- naam: "EEE"
+  lootjes: 6
   inschrijvingen:
-    - 20
+    - 15
     - 21
     - 22
     - 23
-    - 24
-    - 25
-    - 26
+    - 3
+  jokers:
+    - 21
+    - 22
+    - 23
+- naam: "FFF"
+  lootjes: 4
+  inschrijvingen:
+    - 17
+    - 18
+    - 19
+    - 22
+    - 2
+  jokers:
+    - 19
+    - 22
+    - 2
+- naam: "GGG"
+  lootjes: 4
+  inschrijvingen:
+    - 20
     - 27
-    - 28
     - 29
     - 30
     - 31
   jokers:
     - 27
-    - 28
     - 29
-- naam: "Jong Lelystad"
+    - 31
+- naam: "HHH"
   lootjes: 4
   inschrijvingen:
     - 23
-    - 24
-    - 25
-    - 26
-    - 27
     - 30
     - 31
     - 32
-    - 33
     - 34
   jokers:
     - 30
     - 31
     - 32
-- naam: "D66"
+- naam: "III"
   lootjes: 4
   inschrijvingen:
-    - 26
-    - 27
-    - 28
     - 30
     - 31
     - 32
-    - 33
     - 34
-    - 35
     - 36
   jokers:
-    - 33
     - 34
-    - 35
-- naam: "SP"
+    - 31
+    - 32
+- naam: "JJJ"
   lootjes: 4
   inschrijvingen:
     - 29
-    - 30
-    - 31
-    - 32
-    - 33
     - 34
-    - 35
     - 36
     - 37
     - 38
-    - 40
   jokers:
     - 36
     - 37
     - 38
-- naam: "CDA"
+- naam: "KKK"
   lootjes: 2
   inschrijvingen:
     - 32
-    - 33
-    - 34
-    - 35
-    - 36
-    - 37
-    - 38
     - 39
-    - 40
     - 41
     - 42
     - 43
-    - 44
-    - 4
   jokers:
     - 39
-    - 40
     - 41
-- naam: "DENK"
+    - 43
+- naam: "LLL"
   lootjes: 2
   inschrijvingen:
-    - 35
     - 36
-    - 37
-    - 38
-    - 39
-    - 40
-    - 41
     - 42
     - 43
     - 44
     - 45
-    - 46
   jokers:
     - 42
     - 43
     - 44
-- naam: "Lelystads Belang"
+- naam: "MMM"
   lootjes: 2
   inschrijvingen:
-    - 38
-    - 39
-    - 40
-    - 41
-    - 42
     - 43
     - 44
     - 45
-    - 46
     - 47
     - 48
-    - 49
   jokers:
     - 45
-    - 46
     - 47
-- naam: "Forum voor de Ouderen"
+    - 43
+- naam: "NNN"
   lootjes: 2
   inschrijvingen:
-    - 41
-    - 42
-    - 43
-    - 44
-    - 45
-    - 46
-    - 47
     - 48
     - 1
     - 2
@@ -271,60 +176,39 @@
     - 48
     - 1
     - 2
-- naam: "Lokaal Lelystad"
+- naam: "OOO"
   lootjes: 2
   inschrijvingen:
-    - 44
-    - 45
-    - 46
-    - 47
-    - 48
-    - 1
     - 2
     - 3
     - 4
     - 5
-    - 6
     - 7
   jokers:
     - 3
     - 4
     - 5
-- naam: "Forum voor Flevoland"
+- naam: "PPP"
   lootjes: 2
   inschrijvingen:
-    - 47
-    - 48
-    - 1
-    - 2
-    - 3
-    - 4
     - 5
     - 6
-    - 7
+    - 35
     - 8
-    - 9
     - 10
   jokers:
     - 6
-    - 7
+    - 35
     - 8
-- naam: "Fractie Schopman"
+- naam: "QQQ"
   lootjes: 2
   inschrijvingen:
-    - 4
-    - 8
-    - 12
-    - 16
-    - 20
-    - 24
-    - 28
     - 32
+    - 12
     - 36
-    - 40
     - 44
     - 48
   jokers:
     - 32
     - 36
-    - 40
+    - 12
