@@ -138,7 +138,7 @@ public class Loting {
             for (Motie motie : overblijvers) {
                 System.out.println("- " + motie.toString());
             }
-            System.out.println("Deze moties worden verder afgehandeld door de voorzitter van het presidium");
+            System.out.println("Deze moties zullen niet verder worden uitgewerkt");
         }
 
         System.out.println();
@@ -154,7 +154,7 @@ public class Loting {
         loting.leesAlleMotiesIn();
         loting.leesAlleScoreLijstenIn();
         loting.bepaalLotingVolgorde();
-        loting.voerLotingUit(false);
+        loting.voerLotingUit(true);
 
         loting.schrijfEindUitslag();
     }
