@@ -21,6 +21,7 @@ public class LotingRonde {
     // Dynamische gegevens
     private List<LotingDeelname> deelnames;
     private List<LotingDeelname> tijdelijkBuitenMededinging = new ArrayList<>();
+    private List<LotingDeelname> maxReedsBereikt = new ArrayList<>();
     private List<Fractie> lootjes = new ArrayList<>(); // Voor ieder lootje een "fractie" element
     private int getrokkenLootjeNr;
     private Fractie winnaar;
@@ -30,6 +31,7 @@ public class LotingRonde {
     }
 
     public void doeLoting(PrintStream out) {
+        bewaakMaxBehapbaar();
         bepaalBuitenMededinging();
         Collections.sort(deelnames); // Sorteren op volgorde van aantal lootjes
         printStartInfo(out);
@@ -49,10 +51,14 @@ public class LotingRonde {
                 out.println("Uitslag random trekking ---> " + winnaar.getNaam());
                 verwerkResultaat(out);
             } else {
-                out.println("Helaas heeft geen enkele fractie zich aangemeld voor deze motie");
+                out.println("Helaas is geen enkele fractie beschikbaar om deze motie op te pakken");
             }
         } else {
             vulPot(out);
+
+
+
+
             if (waitForEnterKey) {
                 out.print("De trekking vindt nu plaats");
                 waitForEnter("... (druk ENTER om het lot te trekken)");
@@ -80,15 +86,27 @@ public class LotingRonde {
     private void bepaalBuitenMededinging() {
         boolean deelnemersNogZonderOverwinningen = deelnames.stream().map(LotingDeelname::getFractie).anyMatch(fractie -> fractie.getGewonnenMoties().isEmpty());
         if (deelnemersNogZonderOverwinningen) {
-            deelnames.stream().filter(deelname -> !deelname.getFractie().getGewonnenMoties().isEmpty()).forEach(deelname -> tijdelijkBuitenMededinging.add(deelname));
+            deelnames.stream().filter(deelname -> !deelname.getFractie().getGewonnenMoties().isEmpty() && deelname.getAantalJokerLoten() == 0).forEach(deelname -> tijdelijkBuitenMededinging.add(deelname));
             deelnames.removeIf(tijdelijkBuitenMededinging::contains);
         }
+    }
+
+    /**
+     * Vanaf 2022 kunnen fracties ook aangeven hoeveel moties ze maximaal kunnen behappen. Deze routine haalt de
+     * fracties die al aan hun max zitten uit de pot.
+     */
+    private void bewaakMaxBehapbaar() {
+        deelnames.stream().filter(deelname -> deelname.getFractie().heeftMaxMotiesBereikt()).forEach(deelname -> maxReedsBereikt.add(deelname));
+        deelnames.removeIf(maxReedsBereikt::contains);
     }
 
     private void printStartInfo(PrintStream out) {
         String rondeNummerString = (rondeNr < 10 ? "0" : "") + String.valueOf(rondeNr);
         out.println("=========================================== Loting ronde " + rondeNummerString + " ==========================================");
         out.println("Deze ronde betreft " + motie.toString());
+        if (!maxReedsBereikt.isEmpty()) {
+            out.println(fractiesInDeelnames(maxReedsBereikt) + (maxReedsBereikt.size() == 1 ? " neemt" : " nemen") + " niet aan deze ronde deel omdat zij reeds vol zitten (maximaal aantal moties bereikt)");
+        }
         if (!tijdelijkBuitenMededinging.isEmpty()) {
             out.println(fractiesInDeelnames(tijdelijkBuitenMededinging) + (tijdelijkBuitenMededinging.size() == 1 ? " neemt" : " nemen") + " niet aan deze ronde deel omdat andere deelnemende fracties nog geen enkele motie hebben gekregen");
         }

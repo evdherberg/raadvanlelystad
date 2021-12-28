@@ -27,7 +27,7 @@ public class Loting {
                 .getResourceAsStream("moties.yaml");
         List<Map<String, Object>> motieRecords = yaml.load(inputStream);
 
-        this.alleMoties = motieRecords.stream().map(propertyMap -> new Motie(propertyMap)).collect(Collectors.toMap(Motie::getNummer, Function.identity()));
+        this.alleMoties = motieRecords.stream().map(Motie::new).collect(Collectors.toMap(Motie::getNummer, Function.identity()));
     }
 
     private void leesAlleScoreLijstenIn() {
@@ -40,7 +40,7 @@ public class Loting {
         List<Scorelijst> scorelijsten = scorelijstRecords.stream().map(propertyMap -> new Scorelijst(propertyMap, this.alleMoties)).collect(Collectors.toList());
 
         this.alleScoreLijsten = scorelijsten.stream().collect(Collectors.toMap(Scorelijst::getFractie, Function.identity()));
-        this.alleFracties = scorelijsten.stream().map(scorelijst -> new Fractie(scorelijst)).collect(Collectors.toMap(Fractie::getNaam, Function.identity()));
+        this.alleFracties = scorelijsten.stream().map(Fractie::new).collect(Collectors.toMap(Fractie::getNaam, Function.identity()));
     }
 
     /**
@@ -67,7 +67,7 @@ public class Loting {
                 .entrySet()
                 .stream()
                 .sorted(Collections.reverseOrder(Map.Entry.comparingByValue()))
-                .map(e -> e.getKey())
+                .map(Map.Entry::getKey)
                 .collect(Collectors.toList());
 
         System.out.println("De loting zal in de volgende volgorde plaatsvinden:");
@@ -81,7 +81,7 @@ public class Loting {
     }
 
     private void voerLotingUit(boolean waitForEnterKey) {
-        Integer huidigeRonde = 1;
+        int huidigeRonde = 1;
 
         for (Motie huidigeMotie : motiesInVolgordeVanPopulariteit) {
             LotingRonde lotingRonde = new LotingRonde();
@@ -134,7 +134,7 @@ public class Loting {
         if (!overblijvers.isEmpty()) {
             System.out.println();
             System.out.println();
-            System.out.println("Voor de volgende moties heeft zich helaas geen enkele fractie gemeld:");
+            System.out.println("Voor de volgende moties is helaas geen geïnteresseerde fractie beschikbaar:");
             for (Motie motie : overblijvers) {
                 System.out.println("- " + motie.toString());
             }

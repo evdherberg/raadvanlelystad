@@ -1,5 +1,6 @@
 - naam: "AAA"
   lootjes: 10
+  max: 5
   inschrijvingen:
     - 2
     - 3
@@ -19,6 +20,7 @@
     - 5
 - naam: "BBB"
   lootjes: 8
+  max: 4
   inschrijvingen:
     - 12
     - 13
@@ -32,6 +34,7 @@
     - 16
 - naam: "CCC"
   lootjes: 6
+  max: 3
   inschrijvingen:
     - 15
     - 16
@@ -45,6 +48,7 @@
     - 17
 - naam: "DDD"
   lootjes: 6
+  max: 3
   inschrijvingen:
     - 15
     - 36
@@ -58,6 +62,7 @@
     - 47
 - naam: "EEE"
   lootjes: 6
+  max: 3
   inschrijvingen:
     - 15
     - 21
@@ -70,6 +75,7 @@
     - 23
 - naam: "FFF"
   lootjes: 4
+  max: 2
   inschrijvingen:
     - 17
     - 18
@@ -82,6 +88,7 @@
     - 2
 - naam: "GGG"
   lootjes: 4
+  max: 2
   inschrijvingen:
     - 20
     - 27
@@ -94,6 +101,7 @@
     - 31
 - naam: "HHH"
   lootjes: 4
+  max: 2
   inschrijvingen:
     - 23
     - 30
@@ -106,6 +114,7 @@
     - 32
 - naam: "III"
   lootjes: 4
+  max: 2
   inschrijvingen:
     - 30
     - 31
@@ -118,6 +127,7 @@
     - 32
 - naam: "JJJ"
   lootjes: 4
+  max: 2
   inschrijvingen:
     - 29
     - 34
@@ -130,6 +140,7 @@
     - 38
 - naam: "KKK"
   lootjes: 2
+  max: 1
   inschrijvingen:
     - 32
     - 39
@@ -142,6 +153,7 @@
     - 43
 - naam: "LLL"
   lootjes: 2
+  max: 1
   inschrijvingen:
     - 36
     - 42
@@ -154,6 +166,7 @@
     - 44
 - naam: "MMM"
   lootjes: 2
+  max: 1
   inschrijvingen:
     - 43
     - 44
@@ -166,6 +179,7 @@
     - 43
 - naam: "NNN"
   lootjes: 2
+  max: 1
   inschrijvingen:
     - 48
     - 1
@@ -178,6 +192,7 @@
     - 2
 - naam: "OOO"
   lootjes: 2
+  max: 1
   inschrijvingen:
     - 2
     - 3
@@ -190,6 +205,7 @@
     - 5
 - naam: "PPP"
   lootjes: 2
+  max: 1
   inschrijvingen:
     - 5
     - 6
@@ -202,6 +218,7 @@
     - 8
 - naam: "QQQ"
   lootjes: 2
+  max: 1
   inschrijvingen:
     - 32
     - 12

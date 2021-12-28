@@ -10,6 +10,7 @@ public class Fractie {
     // Initiële gegevens
     private String naam;
     private Scorelijst scorelijst;
+    private Integer maxMoties;
 
     // Dynamische gegevens
     private int resterendeLoten;
@@ -19,6 +20,7 @@ public class Fractie {
         this.naam = scorelijst.getFractie();
         this.scorelijst = scorelijst;
         this.resterendeLoten = scorelijst.getLootjes();
+        this.maxMoties = scorelijst.getMaxMoties();
     }
 
     public void winMotie(Motie motie) {
@@ -27,5 +29,9 @@ public class Fractie {
             resterendeLoten--;
         }
         motie.setWinnaar(this);
+    }
+
+    public boolean heeftMaxMotiesBereikt() {
+        return gewonnenMoties.size() >= maxMoties;
     }
 }
