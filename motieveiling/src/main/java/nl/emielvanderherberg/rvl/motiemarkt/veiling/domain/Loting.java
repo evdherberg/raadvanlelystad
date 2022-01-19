@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 
 @Data
 public class Loting {
-    private Map<Integer, Motie> alleMoties;
+    private Map<String, Motie> alleMoties;
     private Map<String, Scorelijst> alleScoreLijsten;
     private Map<String, Fractie> alleFracties;
     private List<Motie> motiesInVolgordeVanPopulariteit;
@@ -34,7 +34,7 @@ public class Loting {
         Yaml yaml = new Yaml();
         InputStream inputStream = this.getClass()
                 .getClassLoader()
-                .getResourceAsStream("scorelijsten-test.yaml");
+                .getResourceAsStream("scorelijsten-fracties.yaml");
         List<Map<String, Object>> scorelijstRecords = yaml.load(inputStream);
 
         List<Scorelijst> scorelijsten = scorelijstRecords.stream().map(propertyMap -> new Scorelijst(propertyMap, this.alleMoties)).collect(Collectors.toList());

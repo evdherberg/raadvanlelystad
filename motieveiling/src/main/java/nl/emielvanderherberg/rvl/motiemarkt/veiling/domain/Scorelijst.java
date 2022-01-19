@@ -12,13 +12,13 @@ public class Scorelijst {
     private String fractie;
     private int lootjes;
     private int maxMoties;
-    private List<Integer> inschrijvingen;
-    private List<Integer> jokers;
+    private List<String> inschrijvingen;
+    private List<String> jokers;
 
     private List<Motie> gewensteMoties;
     private List<Motie> jokerMoties;
 
-    public Scorelijst(final Map<String, Object> properties, final Map<Integer, Motie> alleMoties) {
+    public Scorelijst(final Map<String, Object> properties, final Map<String, Motie> alleMoties) {
         this.fractie = String.class.cast(properties.get("naam"));
         this.lootjes = Integer.class.cast(properties.get("lootjes"));
         this.maxMoties = Integer.class.cast(properties.get("max"));
@@ -32,7 +32,7 @@ public class Scorelijst {
         initialiseerIngeschrevenMoties(alleMoties);
     }
 
-    private void initialiseerIngeschrevenMoties(final Map<Integer, Motie> alleMoties) {
+    private void initialiseerIngeschrevenMoties(final Map<String, Motie> alleMoties) {
         this.gewensteMoties = this.inschrijvingen.stream().map(motieNr -> alleMoties.get(motieNr)).collect(Collectors.toList());
         this.jokerMoties = this.jokers.stream().map(motieNr -> alleMoties.get(motieNr)).collect(Collectors.toList());
     }

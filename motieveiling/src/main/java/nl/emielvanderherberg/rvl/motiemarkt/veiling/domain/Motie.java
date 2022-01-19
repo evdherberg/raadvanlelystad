@@ -7,7 +7,7 @@ import java.util.Map;
 @Data
 public class Motie {
     // Initiële gegevens
-    private Integer nummer;
+    private String nummer;
     private String titel;
     private String indiener;
 
@@ -16,7 +16,7 @@ public class Motie {
     private Fractie winnaar;
 
     public Motie(Map<String, Object> properties) {
-        this.nummer = Integer.class.cast(properties.get("nummer"));
+        this.nummer = String.class.cast(properties.get("nummer"));
         this.titel = String.class.cast(properties.get("titel"));
         this.indiener = String.class.cast(properties.get("indiener"));
     }
