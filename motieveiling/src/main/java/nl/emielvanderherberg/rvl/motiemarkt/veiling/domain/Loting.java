@@ -34,7 +34,7 @@ public class Loting {
         Yaml yaml = new Yaml();
         InputStream inputStream = this.getClass()
                 .getClassLoader()
-                .getResourceAsStream("scorelijsten-fracties.yaml");
+                .getResourceAsStream("scorelijsten-test.yaml");
         List<Map<String, Object>> scorelijstRecords = yaml.load(inputStream);
 
         List<Scorelijst> scorelijsten = scorelijstRecords.stream().map(propertyMap -> new Scorelijst(propertyMap, this.alleMoties)).collect(Collectors.toList());

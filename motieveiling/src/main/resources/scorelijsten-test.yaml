@@ -1,0 +1,105 @@
+- naam: "AAA"
+  lootjes: 10
+  max: 1
+  inschrijvingen:
+    - "1a"
+  jokers:
+    - "1a"
+- naam: "BBB"
+  lootjes: 6
+  max: 1
+  inschrijvingen:
+    - "1a"
+  jokers:
+    - "1a"
+- naam: "CCC"
+  lootjes: 6
+  max: 1
+  inschrijvingen:
+    - "1a"
+  jokers:
+    - "1a"
+- naam: "DDD"
+  lootjes: 6
+  max: 1
+  inschrijvingen:
+    - "1a"
+  jokers:
+    - "1a"
+- naam: "EEE"
+  lootjes: 6
+  max: 1
+  inschrijvingen:
+    - "1a"
+  jokers:
+    - "1a"
+- naam: "FFF"
+  lootjes: 8
+  max: 1
+  inschrijvingen:
+    - "1a"
+  jokers:
+    - "1a"
+- naam: "GGG"
+  lootjes: 4
+  max: 1
+  inschrijvingen:
+    - "1a"
+  jokers:
+    - "1a"
+- naam: "HHH"
+  lootjes: 4
+  max: 1
+  inschrijvingen:
+    - "1a"
+  jokers:
+    - "1a"
+- naam: "III"
+  lootjes: 4
+  max: 1
+  inschrijvingen:
+    - "1a"
+  jokers:
+    - "1a"
+- naam: "JJJ"
+  lootjes: 4
+  max: 1
+  inschrijvingen:
+    - "1a"
+  jokers:
+    - "1a"
+- naam: "KKK"
+  lootjes: 2
+  max: 1
+  inschrijvingen:
+    - "1a"
+  jokers:
+    - "1a"
+- naam: "LLL"
+  lootjes: 2
+  max: 1
+  inschrijvingen:
+    - "1a"
+  jokers:
+    - "1a"
+- naam: "MMM"
+  lootjes: 4
+  max: 1
+  inschrijvingen:
+    - "1a"
+  jokers:
+    - "1a"
+- naam: "NNN"
+  lootjes: 2
+  max: 1
+  inschrijvingen:
+    - "1a"
+  jokers:
+    - "1a"
+- naam: "OOO"
+  lootjes: 2
+  max: 1
+  inschrijvingen:
+    - "1a"
+  jokers:
+    - "1a"
