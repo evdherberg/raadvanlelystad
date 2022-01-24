@@ -56,9 +56,6 @@ public class LotingRonde {
         } else {
             vulPot(out);
 
-
-
-
             if (waitForEnterKey) {
                 out.print("De trekking vindt nu plaats");
                 waitForEnter("... (druk ENTER om het lot te trekken)");

@@ -34,7 +34,7 @@ public class Loting {
         Yaml yaml = new Yaml();
         InputStream inputStream = this.getClass()
                 .getClassLoader()
-                .getResourceAsStream("scorelijsten-test.yaml");
+                .getResourceAsStream("scorelijsten-fracties.yaml");
         List<Map<String, Object>> scorelijstRecords = yaml.load(inputStream);
 
         List<Scorelijst> scorelijsten = scorelijstRecords.stream().map(propertyMap -> new Scorelijst(propertyMap, this.alleMoties)).collect(Collectors.toList());
@@ -96,8 +96,11 @@ public class Loting {
                     LotingDeelname deelname = new LotingDeelname();
                     deelname.setFractie(fractie);
                     deelname.setAantalFractieLoten(fractie.getResterendeLoten());
-                    if (fractie.getScorelijst().getJokerMoties().contains(huidigeMotie)) {
-                        deelname.setAantalJokerLoten(5);
+                    for (Motie jokerMotie : fractie.getScorelijst().getJokerMoties()) {
+                        if (huidigeMotie.equals(jokerMotie)) {
+                            // Fractie heeft joker ingezet op deze motie, voeg 5 extra loten toe
+                            deelname.setAantalJokerLoten(deelname.getAantalJokerLoten() + 5);
+                        }
                     }
                     deelname.setLotingRonde(lotingRonde);
                     alleDeelnamesAanDezeRonde.add(deelname);
